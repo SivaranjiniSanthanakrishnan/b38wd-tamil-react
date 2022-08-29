@@ -69,3 +69,17 @@ Topics saw on 26-08-22
  Export, Import and Render a Component
  Passing props and using props 
  State variable 
+
+Topics on 29-08-22
+   1. React hooks => Hooks allow functional component to have access to state 
+      and other React Features. Because of this component, class components are generally
+      no longer needed. 
+      a. useState => To maintain state variable inside Functional Component 
+         Syntax: const [stateName, stateUpdateFunction] = useState(initializationValue)
+      b. useEffect => Mounting Phase, Updating Phase , Dependency Array
+   2. Lifecycle Methods 
+      a. Mounting phase(componentDidMount),
+      b. Updating Phase (componentDidUpdate),
+      c. Unmounting Phase (componentWillUnmount)
+   3. Conditional Rendering => Render a component conditionally in HTML
+      a. Unmount 

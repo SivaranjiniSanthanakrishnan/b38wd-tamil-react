@@ -2,17 +2,30 @@ import React, { Component } from "react";
 
 class CounterComponent extends Component {
   constructor(props) {
+    console.log("constructor");
     super();
     this.state = {
       initialValue: 5,
     };
   }
-  handleDecrement = (a1) => {
+  handleDecrement = () => {
     this.setState({ initialValue: --this.state.initialValue });
   };
+  componentDidMount() {
+    console.log("Mounting phase of class component");
+    // API Call to hit DB / 3rd party API's and get the data
+    // Update it in our state variable
+  }
+  componentDidUpdate() {
+    console.log("Updating phase of Class Component");
+  }
+  componentWillUnmount() {
+    console.log("Unmounting phase of Class Component");
+  }
   render() {
+    console.log("render");
     let a = 123;
-    const handleIncrement = () => {
+    const handleIncrement = (a1) => {
       // this.state.initialValue = ++this.state.initialValue
       this.setState({ initialValue: ++this.state.initialValue });
     };
@@ -23,8 +36,8 @@ class CounterComponent extends Component {
       <>
         <h3>This is {this.props.componentName}</h3>
         Initial Value: {this.state.initialValue} <br /> <br />
-        <button onClick={handleIncrement}> Increment</button> &nbsp;
-        <button onClick={() => this.handleDecrement(1)}>Decrement</button>
+        <button onClick={() => handleIncrement(1)}> Increment</button> &nbsp;
+        <button onClick={this.handleDecrement}>Decrement</button>
         &nbsp;
         <button onClick={handleReset}>Reset</button> &nbsp;
       </>
