@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Cards from "./shared/Cards";
 class CounterComponent extends Component {
   constructor(props) {
     console.log("constructor");
@@ -39,7 +39,13 @@ class CounterComponent extends Component {
         <button onClick={() => handleIncrement(1)}> Increment</button> &nbsp;
         <button onClick={this.handleDecrement}>Decrement</button>
         &nbsp;
-        <button onClick={handleReset}>Reset</button> &nbsp;
+        <button onClick={handleReset}>Reset</button> &nbsp; <br /> <br />
+        <Cards
+          subheading="Counter Application"
+          heading="Class Component"
+          description="This is a Class Component, consists of Counter Application"
+          functionalities="Increment | Decrement | Reset"
+        />
       </>
     );
   }

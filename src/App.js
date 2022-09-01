@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CounterComponent from "./Counter";
+import Cards from "./shared/Cards";
 
 function Foo(props) {
   const [initialValue, setInitialValues] = useState(5);
@@ -11,13 +12,16 @@ function Foo(props) {
 
   useEffect(() => {
     console.log("Updating phase of  Functional Component");
-  }, [initialValue, counter]);
+  }, [initialValue]);
 
   const handleIncrement = () => {
     setInitialValues(initialValue + 1);
   };
   const handleDecrement = () => {
     setInitialValues(initialValue - 1);
+  };
+  const toggleComponent = (valueFromChild) => {
+    setCounter(valueFromChild);
   };
   return (
     <h3>
@@ -30,7 +34,18 @@ function Foo(props) {
       <br />
       <button onClick={() => setCounter(!counter)}>
         Mount/Unmount Class Component
-      </button>
+      </button>{" "}
+      <br /> <br />
+      <Cards
+        subheading="Counter Application"
+        heading="Functional Component"
+        description="This is a Functional Component, consists of Counter Application and a button to toggle Class Component"
+        functionalities="Increment | Decrement | Reset | Mount/Unmount Class Component"
+        buttonName="Toggle"
+        toggleComponentFromParent={(valueFromChild) =>
+          toggleComponent(valueFromChild)
+        }
+      />
       {counter ? <CounterComponent componentName="Class Component" /> : <></>}
     </h3>
   );
