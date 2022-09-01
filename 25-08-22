@@ -83,3 +83,8 @@ Topics on 29-08-22
       c. Unmounting Phase (componentWillUnmount)
    3. Conditional Rendering => Render a component conditionally in HTML
       a. Unmount 
+
+Topics on 30-08-22
+   1. Reuse a Component 
+   2. Unmounting phase / Lifecycle Method in Functional Component 
+
